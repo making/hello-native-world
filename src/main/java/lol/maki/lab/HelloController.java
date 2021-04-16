@@ -21,6 +21,10 @@ public class HelloController {
 		response.put("id", this.id.incrementAndGet());
 		response.put("message", String.format("Hello %s!", name));
 		response.put("uptime", Duration.ofMillis(System.currentTimeMillis() - initializedAt));
+		final String workerId = System.getenv("FUNCTIONS_CUSTOMHANDLER_WORKER_ID");
+		if (workerId != null) {
+			response.put("workerId", workerId);
+		}
 		return response;
 	}
 }

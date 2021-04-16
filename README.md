@@ -22,7 +22,7 @@ $ curl "http://localhost:8080/api/hello?name=Native"
 
 ```
 $ curl "http://localhost:7071/api/hello?name=Native"
-{"id":1,"message":"Hello Native!","uptime":"PT4.751S"}
+{"id":1,"message":"Hello Native!","uptime":"PT3.495S","workerId":"a8b09f87-87b4-4c3d-95c9-e3ae091acef1"}
 ```
 
 
@@ -37,5 +37,5 @@ az login
 
 ```
 $ curl "https://hello-native-world.azurewebsites.net/api/hello?name=Native"
-{"id":1,"message":"Hello Native!","uptime":"PT4.751S"}
+{"id":1,"message":"Hello Native!","uptime":"PT5.631S","workerId":"f267f27b-a9b0-4c70-a399-94794ba122ed"}
 ```
