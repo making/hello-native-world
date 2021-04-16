@@ -118,8 +118,6 @@
 						</goals>
 						<configuration>
 							<target>
-								<echo message="cat /workspace/${start-class}"
-									  file="${project.build.directory}/exec.sh"/>
 								<exec executable="docker"
 									  outputproperty="container.id">
 									<arg value="create"/>
