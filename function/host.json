@@ -1,0 +1,13 @@
+{
+  "version": "2.0",
+  "customHandler": {
+    "description": {
+      "defaultExecutablePath": "lol.maki.lab.HelloWorldApplication",
+      "workingDirectory": "",
+      "arguments": [
+        "--logging.level.web=DEBUG"
+      ]
+    },
+    "enableForwardingHttpRequest": true
+  }
+}
