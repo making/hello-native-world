@@ -19,7 +19,7 @@ class HelloControllerTest {
 	void hello() throws Exception {
 		mockMvc.perform(get("/hello").param("name", "Native"))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.id").value(1))
-				.andExpect(jsonPath("$.message").value("Hello Native!"));
+				.andExpect(jsonPath("$.message").value("Hello Native!"))
+				.andExpect(jsonPath("$.count").value(1));
 	}
 }

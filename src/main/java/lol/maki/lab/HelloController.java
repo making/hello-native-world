@@ -1,8 +1,8 @@
 package lol.maki.lab;
 
-import java.time.Duration;
+import java.time.OffsetDateTime;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,20 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-	private final AtomicInteger id = new AtomicInteger(0);
+	private final AtomicInteger count = new AtomicInteger(0);
 
-	private static long initializedAt = System.currentTimeMillis();
+	private static OffsetDateTime initializedAt = OffsetDateTime.now();
 
 	@GetMapping(path = "hello")
 	public Map<String, ?> hello(@RequestParam(name = "name", defaultValue = "World") String name) {
-		final Map<String, Object> response = new TreeMap<>();
-		response.put("id", this.id.incrementAndGet());
+		final Map<String, Object> response = new LinkedHashMap<>();
 		response.put("message", String.format("Hello %s!", name));
-		response.put("uptime", Duration.ofMillis(System.currentTimeMillis() - initializedAt));
-		final String workerId = System.getenv("FUNCTIONS_CUSTOMHANDLER_WORKER_ID");
-		if (workerId != null) {
-			response.put("workerId", workerId);
-		}
+		response.put("count", this.count.incrementAndGet());
+		response.put("initializedAt", initializedAt);
 		return response;
 	}
 }
