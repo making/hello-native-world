@@ -9,7 +9,7 @@ java -jar target/hello-world-0.0.1-SNAPSHOT.jar
 
 ```
 $ curl "http://localhost:8080/api/hello?name=Native"
-Hello Native!
+{"id":1,"message":"Hello Native!","uptime":"PT4.751S"}
 ```
 
 ## Run Azure Functions locally
@@ -22,7 +22,7 @@ Hello Native!
 
 ```
 $ curl "http://localhost:7071/api/hello?name=Native"
-Hello Native!
+{"id":1,"message":"Hello Native!","uptime":"PT4.751S"}
 ```
 
 
@@ -37,5 +37,5 @@ az login
 
 ```
 $ curl "https://hello-native-world.azurewebsites.net/api/hello?name=Native"
-Hello Native!
+{"id":1,"message":"Hello Native!","uptime":"PT4.751S"}
 ```
